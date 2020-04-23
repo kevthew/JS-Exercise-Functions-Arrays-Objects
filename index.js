@@ -178,10 +178,10 @@ function isItAnApple(stringArray) {
   let stringArray2 = []
   for (var i=0; i<=stringArray.length; i++ ){
     if (stringArray[i] = "apple"){
-      stringArray2.unshift(true)
+      stringArray2.push(true)
     } 
     else {
-      stringArray2.unshift(false)
+      stringArray2.push(false)
     }
   }
   /* code here */
