@@ -110,6 +110,8 @@ function makePersonObject(id, name, email) {
   this.id = id;
   this.name = name;
   this.email = email;
+  let newPerson = new makePersonObject;
+  return newPerson;
 }
 
 /**
@@ -125,13 +127,14 @@ function makePersonObject(id, name, email) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(makePersonObject) {
-  makePersonObject = {
-    id: "",
-    name: "",
-    email: "",
-}
-  return "hello' my name is " + makePersonObject.name
+function getName(id, name, email) {
+  function makePersonObject(id, name, email){
+    this.id = id;
+    this.name = name;
+    this.email = email;
+  }
+ let newPerson = new makePersonObject
+ return "hello, my name is ${newPerson.name}"
   /* code here */
 }
 
@@ -177,16 +180,17 @@ function appleIndex(stringArray) {
  * the returned value should be: [ false, true, false, false, true, false ].
 */
 function isItAnApple(stringArray) {
-  stringArray = []
+  let stringArray2 = []
   for (var i=0; i<=stringArray.length; i++ ){
     if (stringArray[i] = "apple"){
-      return true
+      stringArray2.unshift(true)
     } 
     else {
-      return false
+      stringArray2.unshift(false)
     }
   }
   /* code here */
+  return stringArray2
 }
 
 
@@ -261,11 +265,7 @@ function getCarInfoByIndex(inventory, index) {
 */
 function getLastCarInfo(inventory) {
   /* code here */
-  for (let i=0; i<=inventory.length; i++){
-    if (i=inventory.length){
-      return 'This is a ${inventory[i].car_make} ${inventory[i].car_model}';
-    }
-  }
+      return 'This is a ${inventory.car_make[inventory.length -1]} ${inventory.car_model[inventory.length -1]}';
 }
 
 /**
@@ -279,7 +279,7 @@ function getLastCarInfo(inventory) {
 */
 function getModelYears(inventory) {
   /* code here */
-  let years = inventory.car_year;
+  let years = [inventory.car_year];
   return years;
 }
 
