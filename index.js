@@ -156,12 +156,7 @@ function getName(id, name, email) {
 */
 function appleIndex(stringArray) {
   /* code here */
-  stringArray = []
-  for (var i=0; i<=stringArray.length; i++ ){
-    if (stringArray[i] = "apple"){
-      return stringArray[i]
-    } 
-  }
+  stringArray.indexOf('apple');
 }
 
 /**
